@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api key manager</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="post" class="insert">
+            <label for="user">User name</label>
+            <input type="text" name="userName" id="user">
+            <label for="key">api key</label>
+            <input type="text" name="key" id="key">
+            <label for="secret">api secret</label>
+            <input type="text" name="secret" id="secret">
+            <input type="button" class="btn" id="Submit" value="Submit">
+        </form>
+
+        <table class="list">
+            <caption>api key manager</caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>user name</th>
+                    <th>api key</th>
+                    <th>api secret</th>
+                    <th> </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>user name</td>
+                    <td>api key</td>
+                    <td>api secret</td>
+                    <td>
+                        <button class="btn delete">delete</button>
+                    </td>
+                    <td>
+                        <button class="btn edit">edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

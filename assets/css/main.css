@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+html {
+  font-size: 62.5%; }
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none; }
+
+body {
+  background-color: #E4E4E4;
+  font-family: 'Roboto', sans-serif; }
+
+.container {
+  width: 96vw;
+  height: 96vh;
+  margin: 1rem auto;
+  background-color: #FEFEFE;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.btn {
+  border-radius: 1rem;
+  padding: 1.2rem 1.8rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: color 1s ease;
+  text-transform: capitalize;
+  font-weight: 600; }
+
+.btn:hover {
+  color: #F2F0F1; }
+
+.insert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.8rem;
+  padding: .2rem;
+  text-transform: capitalize; }
+  .insert input {
+    background-color: #EAEAEA;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 30rem;
+    margin: .2rem 0; }
+    .insert input:last-child {
+      margin-top: 2rem;
+      width: 8rem;
+      align-self: center;
+      background-color: #D15400;
+      margin: 2 auto;
+      cursor: pointer; }
+
+.list {
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #E4E4E4;
+  border-spacing: 0rem; }
+  .list caption {
+    font-size: 3rem;
+    font-weight: 900; }
+  .list th {
+    background-color: #BDC2C8;
+    font-size: 1.8rem;
+    margin: 1rem;
+    padding: 1rem; }
+    .list th:first-child {
+      border-radius: 1rem 0 0 1rem; }
+    .list th:last-child {
+      border-radius: 0 1rem 1rem 0; }
+  .list td {
+    font-size: 1.8rem;
+    padding: 1.4rem 2.8rem; }
+    .list td .delete {
+      background-color: #D15400; }
+    .list td .edit {
+      background-color: #2981BB; }
+
+/*# sourceMappingURL=main.css.map */

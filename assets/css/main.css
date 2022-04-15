@@ -71,7 +71,8 @@ body {
     background-color: #BDC2C8;
     font-size: 1.8rem;
     margin: 1rem;
-    padding: 1rem; }
+    padding: 1rem;
+    text-transform: capitalize; }
     .list th:first-child {
       border-radius: 1rem 0 0 1rem; }
     .list th:last-child {

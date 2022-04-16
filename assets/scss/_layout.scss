@@ -1,7 +1,9 @@
 html {
     font-size: 62.5%;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
 *,
 *::after,
 *::before {
@@ -17,6 +19,8 @@ html {
 body {
     background-color: $colorBgPrimary;
     font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
@@ -30,7 +34,7 @@ body {
     align-items: center;
 }
 
-.btn{
+.btn {
     border-radius: 1rem;
     padding: 1.2rem 1.8rem;
     cursor: pointer;
@@ -40,6 +44,103 @@ body {
     font-weight: 600;
 }
 
-.btn:hover{
+.btn:hover {
     color: $colorPrimary;
+}
+
+.notification {
+    background-color: #E95F55;
+    width: 30rem;
+    margin: 0 auto;
+    position: fixed;
+    height: 10rem;
+    bottom: -10rem;
+    left: calc(50% - 10rem);
+    border-radius: 1rem;
+
+    &__open {
+        transition: top .5s;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        position: absolute;
+        top: 0rem;
+        transition: top .3s .7s;
+        width: 0;
+        z-index: 6;
+        height: 0;
+        border-style: solid;
+        border-width: 0 15rem 8rem 15rem;
+        border-color: transparent transparent #E95F55 transparent;
+    }
+
+    &__close {
+        z-index: 5;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8rem 15rem 0 15rem;
+        border-color: #E95F55 transparent transparent transparent;
+    }
+
+    &__left {
+        border-top-left-radius: 1rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        z-index: 999;
+        height: 0;
+        border-style: solid;
+        border-width: 10rem 0 0 20rem;
+        border-color: transparent transparent transparent #6b5756;
+    }
+
+    &__right {
+        border-top-right-radius: 1rem;
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        z-index: 999;
+        right: 0;
+        border-style: solid;
+        border-width: 0 0 10rem 20rem;
+        border-color: transparent transparent #6b5756 transparent;
+    }
+
+    &__message {
+        width: 100%;
+        color: $colorSecondary;
+        text-align: center;
+        padding: 1.5rem 3rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        position: relative;
+        bottom: -2rem;
+        z-index: 99;
+        transition: opacity .5s 1s, bottom .4s .9s;
+        opacity: 0;
+        border-radius: 1rem;
+        background-color: $colorOnPrimary;
+    }
+
+}
+
+.opening {
+    top: -7.4rem;
+    transition: top .6s .4s;
+}
+.notification__opening{
+    bottom: 5rem;
+    transition: bottom .7s .5s;
+}
+.message__opening{
+    transition: opacity .5s .3s, bottom .3s .9s;
+    bottom: 9rem;
+    z-index: 10;
+    opacity: 1;
 }

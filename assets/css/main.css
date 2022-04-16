@@ -48,7 +48,9 @@ body {
   height: 10rem;
   bottom: -10rem;
   left: calc(50% - 10rem);
-  border-radius: 1rem; }
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center; }
   .notification__open {
     transition: top .5s;
     border-bottom-right-radius: 1rem;
@@ -96,10 +98,10 @@ body {
     border-width: 0 0 10rem 20rem;
     border-color: transparent transparent #6b5756 transparent; }
   .notification__message {
-    width: 100%;
+    width: 90%;
     color: #EAEAEA;
     text-align: center;
-    padding: 1.5rem 3rem;
+    padding: .8rem 1.5rem;
     font-size: 1.8rem;
     font-weight: 500;
     position: relative;

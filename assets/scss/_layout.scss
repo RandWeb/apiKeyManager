@@ -57,6 +57,8 @@ body {
     bottom: -10rem;
     left: calc(50% - 10rem);
     border-radius: 1rem;
+    display: flex;
+    justify-content: center;
 
     &__open {
         transition: top .5s;
@@ -113,10 +115,10 @@ body {
     }
 
     &__message {
-        width: 100%;
+        width: 90%;
         color: $colorSecondary;
         text-align: center;
-        padding: 1.5rem 3rem;
+        padding: .8rem 1.5rem;
         font-size: 1.8rem;
         font-weight: 500;
         position: relative;

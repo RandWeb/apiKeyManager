@@ -4,6 +4,8 @@
     background-color: $colorBgPrimary;
     border-spacing: 0rem;
     text-transform: capitalize;
+    min-width: 100rem;
+    margin: 1rem;
     caption{
         font-size: 3rem;
         font-weight: 900;
@@ -21,17 +23,19 @@
             border-radius:0 1rem 1rem 0;
         }
     }
-
-    td{
-        font-size: 1.8rem;
-        padding: 1.4rem 2.8rem;
-
-        .delete{
-            background-color: $colorBtnDelete;
+    tbody{
+        td{
+            font-size: 1.8rem;
+            padding: 1.4rem 2.8rem;
+    
+            .delete{
+                background-color: $colorBtnDelete;
+            }
+            .edit{
+                background-color: $colorBtnEdit;
+            }
+            
         }
-        .edit{
-            background-color: $colorBtnEdit;
-        }
-        
     }
+   
 }

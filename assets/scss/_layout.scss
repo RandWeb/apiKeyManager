@@ -20,12 +20,11 @@ body {
     background-color: $colorBgPrimary;
     font-family: 'Roboto', sans-serif;
     position: relative;
-    overflow: hidden;
 }
 
 .container {
     width: 96vw;
-    height: 96vh;
+    min-height: 96vh;
     margin: 1rem auto;
     background-color: $colorBgOnPrimary;
     display: flex;

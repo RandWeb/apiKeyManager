@@ -15,12 +15,11 @@ html {
 body {
   background-color: #E4E4E4;
   font-family: 'Roboto', sans-serif;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
 
 .container {
   width: 96vw;
-  height: 96vh;
+  min-height: 96vh;
   margin: 1rem auto;
   background-color: #FEFEFE;
   display: flex;
@@ -159,7 +158,9 @@ body {
   padding: 1rem;
   background-color: #E4E4E4;
   border-spacing: 0rem;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  min-width: 100rem;
+  margin: 1rem; }
   .list caption {
     font-size: 3rem;
     font-weight: 900;
@@ -173,10 +174,10 @@ body {
       border-radius: 1rem 0 0 1rem; }
     .list th:last-child {
       border-radius: 0 1rem 1rem 0; }
-  .list td {
+  .list tbody td {
     font-size: 1.8rem;
     padding: 1.4rem 2.8rem; }
-    .list td .delete {
+    .list tbody td .delete {
       background-color: #D15400; }
-    .list td .edit {
+    .list tbody td .edit {
       background-color: #2981BB; }

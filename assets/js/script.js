@@ -4,7 +4,7 @@ const userNameInput = document.querySelector('#user');
 const keyInput = document.querySelector('#key');
 const secretInput = document.querySelector('#secret');
 const btnSubmit = document.querySelector('#submit');
-
+const list = document.querySelector('.list');
 let inputs = [userNameInput, keyInput, secretInput];
 
 btnSubmit.addEventListener('click', SendRequest)
@@ -12,6 +12,14 @@ btnSubmit.addEventListener('click', SendRequest)
 
 const apis = [];
 
+
+function hideAndShowList(){
+    if (apis.length == 0) {
+        console.log(list.style.display = "none");
+    } else {
+        console.log(list.style.display = "table");
+    }
+}
 function EditApi(elment) {
     const childrenParent = elment.parentElement.parentElement.children;
     idInput.value = childrenParent[0].textContent;
@@ -19,6 +27,9 @@ function EditApi(elment) {
     keyInput.value = childrenParent[2].textContent;
     secretInput.value = childrenParent[3].textContent;
 }
+
+hideAndShowList();
+
 function RemoveApi(elment) {
     console.log(elment.parentElement.parentElement.children[0])
     let children = elment.parentElement.parentElement.children;
@@ -26,7 +37,10 @@ function RemoveApi(elment) {
     elment.parentElement.parentElement.remove();
     let index = apis.findIndex(item => item.id == id);
     apis.splice(index, 1);
+    hideAndShowList();
 }
+
+
 function SendRequest() {
     let messaage = Validate();
     if (messaage == "") {
@@ -93,6 +107,7 @@ function CreateRowTable() {
         document.querySelector('tbody').appendChild(tr);
     }
     emptyForm();
+    hideAndShowList();
 }
 
 function emptyForm() {

@@ -19,6 +19,14 @@ function EditApi(elment) {
     keyInput.value = childrenParent[2].textContent;
     secretInput.value = childrenParent[3].textContent;
 }
+function RemoveApi(elment) {
+    console.log(elment.parentElement.parentElement.children[0])
+    let children = elment.parentElement.parentElement.children;
+    let id = Number(children[0].textContent);
+    elment.parentElement.parentElement.remove();
+    let index = apis.findIndex(item => item.id == id);
+    apis.splice(index, 1);
+}
 function SendRequest() {
     let messaage = Validate();
     if (messaage == "") {
@@ -72,16 +80,16 @@ function CreateRowTable() {
         tbody.innerHTML = "";
         apis.forEach(item => {
             let tr = document.createElement("tr");
-            tr.innerHTML = (`<td>${item.id}</td><td>${item.userName}</td><td>${item.apiKey}</td><td>${item.apiSecret}</td><td><button class="btn delete">delete</button></td><td><button class="btn edit" onClick="EditApi(this)">edit</button></td>`);
+            tr.innerHTML = (`<td>${item.id}</td><td>${item.userName}</td><td>${item.apiKey}</td><td>${item.apiSecret}</td><td><button class="btn delete" onClick="RemoveApi(this)">delete</button></td><td><button class="btn edit" onClick="EditApi(this)">edit</button></td>`);
             console.log(tr);
             tbody.appendChild(tr);
         });
 
     } else {
-        newApi.id = apis.length + 1;
+        newApi.id = GenerateId(apis.length + 1);
         apis.push(newApi);
         let tr = document.createElement("tr");
-        tr.innerHTML = (`<td>${apis.length}</td><td>${newApi['userName']}</td><td>${newApi['apiKey']}</td><td>${newApi['apiSecret']}</td><td><button class="btn delete">delete</button></td><td><button class="btn edit" onClick="EditApi(this)">edit</button></td>`);
+        tr.innerHTML = (`<td>${newApi.id}</td><td>${newApi['userName']}</td><td>${newApi['apiKey']}</td><td>${newApi['apiSecret']}</td><td><button class="btn delete"  onClick="RemoveApi(this)" >delete</button></td><td><button class="btn edit" onClick="EditApi(this)">edit</button></td>`);
         document.querySelector('tbody').appendChild(tr);
     }
     emptyForm();
@@ -90,4 +98,11 @@ function CreateRowTable() {
 function emptyForm() {
     inputs.forEach(item => item.value = "");
     idInput.value = "";
+}
+
+function GenerateId(id) {
+    let index = apis.findIndex(item => item.id == id);
+    if (index == -1) return id;
+    id = GenerateId(id + 1);
+    return id;
 }
